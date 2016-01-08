@@ -37,12 +37,11 @@ data Query a = Search String a
 
 -- | This is 100% copied from Halogen.HTML.Events.Forms
 -- |   https://github.com/slamdata/purescript-halogen/blob/master/src/Halogen/HTML/Events/Forms.purs
--- | it was the only way I could come up with to get the input value on every
--- | key up event.
+-- | it was the only way I could come up with to get the input value on every key up event.
 addForeignPropHandler :: forall f value. (IsForeign value) => String -> String -> (value -> EventHandler (f Unit)) -> Prop (f Unit)
 addForeignPropHandler key prop f = handler' (eventName key) (either (const $ pure Nothing) (map Just <<< f) <<< readProp prop <<< toForeign <<< _.target)
 
--- | Attaches an event handler which will fire on keyup.
+-- | Attaches an event handler which will fire on keyup and receive the *value* of the input.
 onKeyUpInput :: forall f. (String -> EventHandler (f Unit)) -> Prop (f Unit)
 onKeyUpInput = addForeignPropHandler "keyup" "value"
 
@@ -86,6 +85,7 @@ ui = component render eval
           H.td_ [H.text (show entry.page)],
           H.td_ [H.text entry.function]
         ]
+    -- only show entries whose function name contains the search query
     filteredEntries = filter isMatch s.indexEntries
     isMatch entry = contains s.searchQuery entry.function
 
