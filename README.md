@@ -6,6 +6,8 @@ with a dynamic index of functions in my book
 Built using
 <a href="https://github.com/slamdata/purescript-halogen">purescript-halogen</a>.
 
+![Image of App](https://raw.githubusercontent.com/joelgrus/dsfs-function-index/master/index-of-functions.png)
+
 You can see it up and running at
 
 <a href="http://joelgrus.com/experiments/function-index/">http://joelgrus.com/experiments/function-index/</a>
