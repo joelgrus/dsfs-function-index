@@ -17,7 +17,7 @@ I built this for two reasons. First, because my loyal readers
 And second, because I'm trying to learn how to build things in Purescript.
 
 It turned out to be sort of a pain, mostly because I had a hell of a time implementing
-the onKeyUp logic. (see, e.g. <a href = "https://github.com/joelgrus/dsfs-function-index/blob/master/src/Main.purs#L60">here</a>)
+the onKeyUp logic. (see, e.g. <a href = "https://github.com/joelgrus/dsfs-function-index/blob/master/src/Main.purs#L59">here</a>)
 
 If you want to run it yourself, do
 
